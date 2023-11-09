@@ -15,6 +15,7 @@ with sr.Microphone() as source:
             {"role": "user", "content": audio},
         ]
     )
+    print(response)
 
 
 # write audio to a WAV file
