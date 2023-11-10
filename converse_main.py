@@ -11,7 +11,7 @@ with sr.Microphone() as source:
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are having a conversation"},
+            {"role": "system", "content": "You are having a conversation and will respond as though you are in the middle of whatever conversation the user starts asking you about"},
             {"role": "user", "content": audio},
         ]
     )
