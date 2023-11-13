@@ -6,7 +6,7 @@ import openai
 # obtain audio from the microphone
 r = sr.Recognizer()
 with sr.Microphone() as source:
-    print("Say something!")
+    print("Talk with the bot!")
     audio = r.listen(source)
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
