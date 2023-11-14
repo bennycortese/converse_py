@@ -5,17 +5,22 @@ import openai
 
 # obtain audio from the microphone
 r = sr.Recognizer()
-with sr.Microphone() as source:
-    print("Talk with the bot!")
-    audio = r.listen(source)
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "You are having a conversation and will respond as though you are in the middle of whatever conversation the user starts asking you about"},
-            {"role": "user", "content": audio},
-        ]
-    )
-    print(response)
+
+
+chatting = True
+
+while chatting:
+	with sr.Microphone() as source:
+    	print("Talk with the bot!")
+    	audio = r.listen(source)
+    	response = openai.ChatCompletion.create(
+        	model="gpt-3.5-turbo",
+        	messages=[
+            	{"role": "system", "content": "You are having a conversation and will respond as though you are in the middle of whatever conversation the user starts asking you about"},
+            	{"role": "user", "content": audio},
+        	]
+    	)
+    	print(response)
 
 
 # write audio to a WAV file
