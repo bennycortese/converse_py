@@ -10,6 +10,7 @@ r = sr.Recognizer()
 chatting = True
 
 language = language_setter()
+print(language)
 
 while chatting:
 	with sr.Microphone() as source:
