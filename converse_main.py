@@ -41,5 +41,11 @@ def language_setter():
             	{"role": "user", "content": audio},
         	]
     	)
+	response2 = openai.ChatCompletion.create(
+        	model="gpt-3.5-turbo",
+        	messages=[
+            	{"role": "system", "content": "convert this language to an abbreviation that works with python code: " + response},
+        	]
+    	)
     language = response
     return language
