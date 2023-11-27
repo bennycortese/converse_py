@@ -10,7 +10,14 @@ r = sr.Recognizer()
 chatting = True
 
 language = language_setter()
-print(language)
+validLanguage = False
+while not validLanguage:
+    try:
+        check_if_valid(language)
+        validLanguage = True
+    except:
+        language = language_setter()
+
 
 while chatting:
 	with sr.Microphone() as source:
