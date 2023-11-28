@@ -16,12 +16,14 @@ while not validLanguage:
         check_if_valid(language)
         validLanguage = True
     except:
+	#todo, put a verbal print "error occured, need to redo what language you're using"
         language = language_setter()
 
 
 while chatting:
 	with sr.Microphone() as source:
     	print("Talk with the bot!")
+	#todo, this print should be a verbal statement
     	audio = r.listen(source)
     	response = openai.ChatCompletion.create(
         	model="gpt-3.5-turbo",
@@ -40,6 +42,7 @@ with open("microphone-results.wav", "wb") as f:
 def language_setter():
 	with sr.Microphone() as source:
     	print("What language are you speaking?")
+	#todo, this print should be a verbal statement
     	audio = r.listen(source)
         response = openai.ChatCompletion.create(
         	model="gpt-3.5-turbo",
