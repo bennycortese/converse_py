@@ -19,11 +19,10 @@ while not validLanguage:
 	#todo, put a verbal print "error occured, need to redo what language you're using"
         language = language_setter()
 
-
+print("Talk with the bot!")
+#todo, this print should be a verbal statement, and make it the desired language
 while chatting:
 	with sr.Microphone() as source:
-    	print("Talk with the bot!")
-	#todo, this print should be a verbal statement
     	audio = r.listen(source)
     	response = openai.ChatCompletion.create(
         	model="gpt-3.5-turbo",
@@ -33,6 +32,7 @@ while chatting:
         	]
     	)
     	print(response)
+	#todo, this print should be a verbal statement as well
 
 
 # write audio to a WAV file
