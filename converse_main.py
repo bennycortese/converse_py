@@ -28,7 +28,8 @@ while chatting:
         	model="gpt-3.5-turbo",
         	messages=[
             	{"role": "system", "content": "You are having a conversation and will respond as though you are in the middle of whatever conversation the user starts asking you about"},
-            	{"role": "user", "content": audio},
+            	{"role": "system", "content": "If the user asks me a personal question I will respond as though I was a regular person because that will help them learn the language they are speaking better"},
+                {"role": "user", "content": audio},
         	]
     	)
     	print(response)
